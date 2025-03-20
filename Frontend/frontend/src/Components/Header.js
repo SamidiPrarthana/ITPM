@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../Components/MaintenanceStyle.css";
+
 
 
 function Header() {
@@ -12,11 +13,10 @@ function Header() {
             <p style={{ marginLeft: "8%", color: "#5D6D7E", fontWeight: "800" }}>
                Community Management 
             </p>
-            <hr style={{ border: "1px solid" }} />
 
             <button
-                className="login-btn"
-                onClick={() => navigate("/signup")}
+                className="maintain-btn"
+                onClick={() => navigate("/maintain")}
                 style={{
                     marginLeft: "84%",
                     backgroundColor: "#E9E9E9",
@@ -26,9 +26,9 @@ function Header() {
                     height:"30px",
                 }}
             >
-                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("/signup")} style={{ fontSize: "18px", color: "black", fontWeight: "900" }}>
+                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("/Account")} style={{ fontSize: "18px", color: "black", fontWeight: "900" }}>
                     {" "}
-                    My Account
+                   Account
                 </i>
             </button>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -37,7 +37,7 @@ function Header() {
                         <b>
                             <h4 style={{ color: "white" }}>
                                 <u>
-                                    Protons <span style={{ color: "rgba(255, 74, 2, 0.816)" }}>E&E</span>
+                                    Community <span style={{ color: "rgba(41, 25, 190, 0.82)" }}>Management</span>
                                 </u>
                             </h4>
                         </b>
@@ -66,36 +66,15 @@ function Header() {
 
                             <li className="nav-item dropdown" style={{ marginLeft: "25%" }}>
                                 <a className="nav-link_H dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Installation
+                                    Maintenance
                                 </a>
-                                <ul className="dropdown-menu" style={{ width: "255px" }}>
-                                    <li>
-                                        <button className="dropdown-btn" onClick={() => navigate("/cctv")}>
-                                            CCTV&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button className="dropdown-btn" onClick={() => navigate("/doorphone")}>
-                                            DOOR PHONE&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button className="dropdown-btn" onClick={() => navigate("/doorlock")}>
-                                            DOOR LOCK&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button className="dropdown-btn" onClick={() => navigate("/alarm")}>
-                                            ALARMS & MOTION DETECTOR
-                                        </button>
-                                    </li>
-                                </ul>
+                               
                             </li>
 
                             <li className="nav-item" style={{ marginLeft: "24%" }}>
-                                <button className="nav-btn" onClick={() => navigate("/repair")}>
+                                <button className="nav-btn" onClick={() => navigate("/Maintenance")}>
                                     <a className="nav-link_H" href="#">
-                                        Repairing
+                                    Maintenance
                                     </a>
                                 </button>
                             </li>
@@ -113,7 +92,7 @@ function Header() {
                                 <button className="nav-btn" onClick={() => navigate("/complaints")}>
                                     {" "}
                                     <a className="nav-link_H" href="complaints">
-                                        Complaint
+                                        Complaints
                                     </a>
                                 </button>
                             </li>

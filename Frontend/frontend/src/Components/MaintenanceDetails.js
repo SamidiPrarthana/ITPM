@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../Components/MaintenanceStyle.css"; 
 import { useNavigate } from "react-router-dom";
-import Maintenance from "../Page/Maintenance";
+
 
 
 function MaintenanceDetails(){

@@ -13,7 +13,7 @@ ReactDOM.render(
       <Routes>
 
       <Route path='/' element={<App />} />
-      <Route path='/maintenance' element={<Maintenance />} />
+      <Route path='/Maintenance' element={<Maintenance />} />
       <Route path='/MDetails' element={<MaintenanceDetails />} />
       <Route path='/editMaintenance/:itemId' element={<UpdateMaintenance />} />
 

@@ -115,4 +115,35 @@ ody{
       margin-left: 10%;
     }
   
+
+
+
+    body{
+      background: white;
+  }
+  
+  .container-fluid{
+      background-color: rgba(16, 16, 16, 0.926);
+      height: 65px;
+  }
+  .nav-link_H{
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+  }
+  .nav-btn{
+      background-color: rgba(16, 16, 16, 0);
+      border: none;
+      border-radius: 0;
+      
+  }
+  .nav-link_H:hover{
+      color:  rgba(67, 137, 218, 0.816);
+  }
+
+
+
+  
    
