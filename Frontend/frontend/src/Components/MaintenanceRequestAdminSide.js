@@ -3,18 +3,17 @@ import axios from "axios";
 import "../Components/MaintenanceStyle.css"; 
 import { useNavigate } from "react-router-dom";
 
-
-
-function MaintenanceDetails() {
+function MaintenanceRequestAdminSide() {
     const [dataList, setDataList] = useState([]);
     const navigate = useNavigate();
 
+    // Fetch data function
     const getFetchData = async () => {
         try {
             const response = await axios.get("http://localhost:8071/Maintenance/get");
-            console.log(response.data);
             if (response.data.success) {
                 setDataList(response.data.Maintenance);
+                alert("Maintenance fetched successfully");
             } else {
                 alert("Failed To Fetch Maintenance");
             }
@@ -28,23 +27,43 @@ function MaintenanceDetails() {
         getFetchData();
     }, []);
 
-    const handleDelete = (id) => {
-        axios.delete(`http://localhost:8071/Maintenance/delete/${id}`).then((res) => {
-            alert("Delete Successfully");
-            setDataList(dataList.filter(Maintenance => Maintenance._id !== id));
-        }).catch((error) => {
-            console.error("Error deleting maintenance:", error);
-            alert("Failed to delete maintenance");
+  // Admin Side: Handle Accept
+const handleAccept = (id) => {
+    // Update the status of maintenance to 'Accepted'
+    axios.put(`http://localhost:8071/Maintenance/update/${id}`, { status: "Accepted" })
+        .then((res) => {
+            alert("Maintenance Request Accepted");
+            // Update the data to reflect changes
+            setDataList(dataList.map((Maintenance) => 
+                Maintenance._id === id ? { ...Maintenance, status: "Accepted" } : Maintenance
+            ));
+        })
+        .catch((error) => {
+            console.error("Error updating maintenance:", error);
+            alert("Failed to accept maintenance");
         });
-    };
+};
+
+// Admin Side: Handle Delete (Reject)
+const handleDelete = (id) => {
+    axios.delete(`http://localhost:8071/Maintenance/delete/${id}`).then((res) => {
+        alert("Maintenance Request Rejected and Deleted Successfully");
+        setDataList(dataList.filter(Maintenance => Maintenance._id !== id));
+    }).catch((error) => {
+        console.error("Error deleting maintenance:", error);
+        alert("Failed to delete maintenance");
+    });
+};
 
     return (
         <div className="body1">
-        <br /><br />
+            <br /><br />
             <div className="container1">
-                <h1><i>My Maintenance Request</i></h1>
+                <h1><i>All Maintenance Request</i></h1>
             </div>
             <br />
+           
+
             <table className="table">
                 <thead>
                     <tr style={{ textAlign: "center" }}>
@@ -54,7 +73,6 @@ function MaintenanceDetails() {
                         <th scope="col">Maintenance Type</th>
                         <th scope="col">Description</th>
                         <th scope="col">Available Time</th>
-                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -67,27 +85,27 @@ function MaintenanceDetails() {
                             <td>{Maintenance.MaintenanceType}</td>
                             <td>{Maintenance.description}</td>
                             <td>{Maintenance.AvailableTime}</td>
-                            <td>{Maintenance.status || "Pending"}</td>
                             <td>
-                                {Maintenance.status === "Pending" ? (
+                                {Maintenance.status === "Accepted" ? (
+                                    <span>Request Accepted</span>  // Display "Accepted" if status is accepted
+                                ) : (
                                     <>
                                         <button
                                             type="button"
-                                            onClick={() => navigate(`/editMaintenance/${Maintenance._id}`)}
+                                            onClick={() => handleAccept(Maintenance._id)}
                                             className="btnAction1"
                                         >
-                                            Update
-                                        </button>&emsp;
+                                            Accept
+                                        </button>
+                                        &emsp;
                                         <button
                                             type="button"
                                             onClick={() => handleDelete(Maintenance._id)}
                                             className="btnAction2"
                                         >
-                                            Delete
+                                            Reject
                                         </button>
                                     </>
-                                ) : (
-                                    <span>Action Denied</span>  // Show status if not pending
                                 )}
                             </td>
                         </tr>
@@ -101,4 +119,4 @@ function MaintenanceDetails() {
     );
 }
 
-export default MaintenanceDetails;
+export default MaintenanceRequestAdminSide;

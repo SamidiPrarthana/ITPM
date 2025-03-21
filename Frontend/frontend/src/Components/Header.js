@@ -16,7 +16,7 @@ function Header() {
 
             <button
                 className="maintain-btn"
-                onClick={() => navigate("/maintain")}
+                onClick={() => navigate("/MDetails")}
                 style={{
                     marginLeft: "84%",
                     backgroundColor: "#E9E9E9",
@@ -26,9 +26,9 @@ function Header() {
                     height:"30px",
                 }}
             >
-                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("/Account")} style={{ fontSize: "18px", color: "black", fontWeight: "900" }}>
+                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("")} style={{ fontSize: "18px", color: "black", fontWeight: "900" }}>
                     {" "}
-                   Account
+                    MaintenanceForResidenceSide
                 </i>
             </button>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -66,24 +66,24 @@ function Header() {
 
                             <li className="nav-item dropdown" style={{ marginLeft: "25%" }}>
                                 <a className="nav-link_H dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Maintenance
+                                    Maintenance ADD
                                 </a>
                                
                             </li>
 
                             <li className="nav-item" style={{ marginLeft: "24%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/Maintenance")}>
-                                    <a className="nav-link_H" href="#">
+                                    <a className="nav-link_H">
                                     Maintenance
                                     </a>
                                 </button>
                             </li>
 
                             <li className="nav-item" style={{ marginLeft: "24%" }}>
-                                <button className="nav-btn" onClick={() => navigate("/aboutus")}>
+                                <button className="nav-btn" onClick={() => navigate("/MDetailsAdminSide")}>
                                     {" "}
-                                    <a className="nav-link_H" href="aboutus">
-                                        Aboutus
+                                    <a className="nav-link_H">
+                                        MaintenanceRequestAdminSide
                                     </a>
                                 </button>
                             </li>

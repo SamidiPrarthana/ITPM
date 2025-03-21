@@ -27,9 +27,11 @@ const MaintenanceSchema =new Schema({
     AvailableTime:{
         type:String,
         required:true
-    },
-    
-
+    },status: {
+        type: String,
+        enum: ["Pending", "Accepted", "Rejected"],
+        default: "Pending"  // Default status will be "Pending"
+    }
 })
 const Maintenance = mongoose.model("Maintenance",MaintenanceSchema);
 

@@ -11,7 +11,6 @@ return(
             <div>
                 <Header /> 
                 <br /> <br />
-                 <Maintenance />
             </div>
 
 );
