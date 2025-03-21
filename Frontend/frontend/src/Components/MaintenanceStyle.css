@@ -7,6 +7,13 @@ body {
   padding: 0;
 }
 
+.container-fluid{
+  background-color: rgba(16, 16, 16, 0.926);
+  height: 65px;
+}
+
+
+
 /* Container for the form */
 .maintenance-form-container {
   width: 100%;

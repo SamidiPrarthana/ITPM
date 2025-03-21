@@ -10,35 +10,37 @@ function Header() {
 
     return (
         <div>
-            <p style={{ marginLeft: "8%", color: "#5D6D7E", fontWeight: "800" }}>
-               Community Management 
+            <p style={{ width:"50%", marginLeft: "32%",marginRight:"20%", marginTop:"3%", color: "rgb(67, 67, 70)", fontWeight: "800" ,fontSize:"30px"}}>
+               Community Management System
             </p>
 
             <button
                 className="maintain-btn"
                 onClick={() => navigate("/MDetails")}
                 style={{
-                    marginLeft: "84%",
-                    backgroundColor: "#E9E9E9",
+                    marginLeft: "74%",
+                    backgroundColor: "rgba(82, 73, 158, 0.82)",
                     borderRadius: "3px",
                     border: "none",
-                    width:"8%",
+                    width:"23%",
                     height:"30px",
                 }}
             >
-                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("")} style={{ fontSize: "18px", color: "black", fontWeight: "900" }}>
+                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("")} style={{ fontSize: "18px", color: "white", fontWeight: "900" }}>
                     {" "}
                     MaintenanceForResidenceSide
                 </i>
             </button>
+
+            <br /><br />
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
                         <b>
                             <h4 style={{ color: "white" }}>
-                                <u>
-                                    Community <span style={{ color: "rgba(41, 25, 190, 0.82)" }}>Management</span>
-                                </u>
+                               <b><u>
+                                    Community <span style={{ color: "rgba(134, 133, 145, 0.82)" }}>Management</span>
+                                </u></b> 
                             </h4>
                         </b>
                     </a>
@@ -54,7 +56,7 @@ function Header() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul className="navbar-nav" style={{ marginLeft: "11%" }}>
+                        <ul className="navbar-nav" style={{ marginLeft: "10%" }}>
                             <li className="nav-item">
                                 <button className="nav-btn" onClick={() => navigate("/")}>
                                     {" "}
@@ -64,14 +66,14 @@ function Header() {
                                 </button>
                             </li>
 
-                            <li className="nav-item dropdown" style={{ marginLeft: "25%" }}>
+                            <li className="nav-item dropdown" style={{ marginLeft: "15%" }}>
                                 <a className="nav-link_H dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Maintenance ADD
                                 </a>
                                
                             </li>
 
-                            <li className="nav-item" style={{ marginLeft: "24%" }}>
+                            <li className="nav-item" style={{ marginLeft: "15%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/Maintenance")}>
                                     <a className="nav-link_H">
                                     Maintenance
@@ -79,7 +81,7 @@ function Header() {
                                 </button>
                             </li>
 
-                            <li className="nav-item" style={{ marginLeft: "24%" }}>
+                            <li className="nav-item" style={{ marginLeft: "15%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/MDetailsAdminSide")}>
                                     {" "}
                                     <a className="nav-link_H">
@@ -88,7 +90,7 @@ function Header() {
                                 </button>
                             </li>
 
-                            <li className="nav-item" style={{ marginLeft: "24%" }}>
+                            <li className="nav-item" style={{ marginLeft: "15%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/complaints")}>
                                     {" "}
                                     <a className="nav-link_H" href="complaints">

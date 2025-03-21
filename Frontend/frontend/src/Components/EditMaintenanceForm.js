@@ -52,7 +52,7 @@ function EditMaintenanceForm() {
 
         // Validation checks
         if (!formData.FlatID) {
-            setFlatIDError("Flat ID  is required.");
+            setFlatIDError("Flat ID  Is required.");
             return;
         } else {
             setFlatIDError("");
@@ -193,7 +193,8 @@ function EditMaintenanceForm() {
 
                     <div className="form-column">
                         <label htmlFor="AvailableTime" className="form-label">Available Time</label>
-                        <textarea
+                        <input
+                            type="text"
                             className="form-input available-time"
                             id="AvailableTime"
                             value={formData.AvailableTime}
