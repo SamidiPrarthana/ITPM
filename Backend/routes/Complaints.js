@@ -19,7 +19,7 @@ router.route("/add").post((req,res)=> {
     })
 });
 
-    router.route("/").get((req,res)=> {
+    router.route("/get").get((req,res)=> {
         Complaints.find().then((Complaints)=>{
             res.json({success:true, Complaints});
         }).catch((err)=> {
@@ -30,14 +30,14 @@ router.route("/add").post((req,res)=> {
 });
 
 router.route("/update/:id").put(async(req,res)=> {
-    let ComplaintID = req.params.id;
+    let ComplaintId = req.params.id;
     const {MaintenanceType,StaffName,CDescription} = req.body;
     const updateComplaints= {
         MaintenanceType,
         StaffName,
         CDescription,
     }
-    const update = await Complaints.findByIdAndUpdate(ComplaintID,updateComplaints).then(()=> {
+    const update = await Complaints.findByIdAndUpdate(ComplaintId,updateComplaints).then(()=> {
         res.status(200).send({status:"Complaints updated.."})
     }).catch((err)=> {
         console.log(err);
@@ -47,8 +47,8 @@ router.route("/update/:id").put(async(req,res)=> {
 
 router.route("/delete/:id").delete(async (req, res) => {
     try {
-        const ComplaintID = req.params.id;
-        await Complaints.findByIdAndDelete(ComplaintID);
+        const ComplaintId = req.params.id;
+        await Complaints.findByIdAndDelete(ComplaintId);
         res.status(200).json({ status: "Complaints deleted" });
     } catch (error) {
         console.error("Error deleting complaints:", error);

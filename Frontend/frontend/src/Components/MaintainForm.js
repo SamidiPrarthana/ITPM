@@ -184,7 +184,9 @@ function MaintenanceForm() {
                         <label htmlFor="AvailableTime" className="form-label">
                             Available Time
                         </label>
-                        <textarea
+
+                        <input
+                            type="text"
                             className="form-input available-time"
                             id="AvailableTime"
                             value={AvailableTime}
