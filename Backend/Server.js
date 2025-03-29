@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express()
 const host = 'localhost';
 const router = require('./routes/Maintenance.js')
-const ComplaintsRouter = require('./routes/Complaints')
+const ComplaintsRouter = require('./routes/Complaints.js')
 
 //const router2 = require('../BACKEND/routes/KK/router.js')
 
